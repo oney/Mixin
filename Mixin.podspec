@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'Mixin'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'Mixins for iOS projects'
   s.description      = <<-DESC
 Add React.js-like mixins to your iOS projects
