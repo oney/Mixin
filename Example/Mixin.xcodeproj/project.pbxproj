@@ -14,6 +14,7 @@
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
 		9D95AB31721A725B41B5A6CD /* Pods_Mixin_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 435E21726EBCE863B98CEEAD /* Pods_Mixin_Tests.framework */; };
+		BFC5B2601FD3248000313663 /* SetupMixin.swift in Sources */ = {isa = PBXBuildFile; fileRef = BFC5B25F1FD3248000313663 /* SetupMixin.swift */; };
 		C17DB0245EE72B7FAEE7F46A /* Pods_Mixin_Example.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 961BBD73A6B82F020F4B6ECD /* Pods_Mixin_Example.framework */; };
 /* End PBXBuildFile section */
 
@@ -40,12 +41,13 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		961BBD73A6B82F020F4B6ECD /* Pods_Mixin_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Mixin_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		9A969EFCAFB736A409F6734F /* Mixin.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = Mixin.podspec; path = ../Mixin.podspec; sourceTree = "<group>"; };
+		9A969EFCAFB736A409F6734F /* Mixin.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = Mixin.podspec; path = ../Mixin.podspec; sourceTree = "<group>"; };
 		AA20C926292B8437015F770F /* Pods-Mixin_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mixin_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mixin_Tests/Pods-Mixin_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		B812687A9E5911D9907B1EA9 /* Pods-Mixin_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mixin_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-Mixin_Example/Pods-Mixin_Example.release.xcconfig"; sourceTree = "<group>"; };
-		C5F9AD4436A73A0DBD2B9183 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		BFC5B25F1FD3248000313663 /* SetupMixin.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SetupMixin.swift; sourceTree = "<group>"; };
+		C5F9AD4436A73A0DBD2B9183 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D149405BF3F57CC17B1D7FE1 /* Pods-Mixin_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mixin_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mixin_Tests/Pods-Mixin_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		D5906E095654AD6A1681C19C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		D5906E095654AD6A1681C19C /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		FD469EBFC26E3954B71B6154 /* Pods-Mixin_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Mixin_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Mixin_Example/Pods-Mixin_Example.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -95,6 +97,7 @@
 			children = (
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				BFC5B25F1FD3248000313663 /* SetupMixin.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -376,6 +379,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				BFC5B2601FD3248000313663 /* SetupMixin.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

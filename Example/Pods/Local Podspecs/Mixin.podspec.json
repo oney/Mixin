@@ -1,0 +1,22 @@
+{
+  "name": "Mixin",
+  "version": "0.1.0",
+  "summary": "A short description of Mixin.",
+  "description": "TODO: Add long description of the pod here.",
+  "homepage": "https://github.com/Howard Yang/Mixin",
+  "license": {
+    "type": "MIT",
+    "file": "LICENSE"
+  },
+  "authors": {
+    "Howard Yang": "appdevoney@gmail.com"
+  },
+  "source": {
+    "git": "https://github.com/Howard Yang/Mixin.git",
+    "tag": "0.1.0"
+  },
+  "platforms": {
+    "ios": "8.0"
+  },
+  "source_files": "Mixin/Classes/**/*"
+}

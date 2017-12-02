@@ -1,0 +1,6 @@
+framework module Pods_Mixin_Example {
+  umbrella header "Pods-Mixin_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

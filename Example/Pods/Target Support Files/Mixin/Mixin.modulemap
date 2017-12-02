@@ -1,0 +1,6 @@
+framework module Mixin {
+  umbrella header "Mixin-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,22 @@
+PODS:
+  - Mixin (0.1.0)
+  - Nimble (7.0.2)
+  - Quick (1.2.0)
+
+DEPENDENCIES:
+  - Mixin (from `../`)
+  - Nimble (~> 7.0.2)
+  - Quick (~> 1.2.0)
+
+EXTERNAL SOURCES:
+  Mixin:
+    :path: ../
+
+SPEC CHECKSUMS:
+  Mixin: 7cc678a7bbc1e1a5f6d739c781e29e25a1f4cedc
+  Nimble: bfe1f814edabba69ff145cb1283e04ed636a67f2
+  Quick: 58d203b1c5e27fff7229c4c1ae445ad7069a7a08
+
+PODFILE CHECKSUM: b3629325c9e96fe3460d062f51d09ccde53e06d9
+
+COCOAPODS: 1.3.1
