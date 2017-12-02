@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
 Add React.js-like mixins to your iOS projects
                        DESC
 
-  s.homepage         = 'https://github.com/Howard Yang/Mixin'
+  s.homepage         = 'https://github.com/oney/Mixin'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'Howard Yang' => 'appdevoney@gmail.com' }
@@ -29,6 +29,5 @@ Add React.js-like mixins to your iOS projects
   # }
 
   # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
   # s.dependency 'AFNetworking', '~> 2.3'
 end
