@@ -14,7 +14,6 @@ public protocol KeyboardMixin: ViewControllerMixinable {
 }
 
 public extension KeyboardMixin {
-    var endEditingViews: [UIView]? { return nil }
     private func registerKeyboard() {
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIKeyboardWillHide, object: nil, queue: nil) { [weak self] notification in
             self?.keyboardHeight = nil
@@ -33,7 +32,7 @@ public extension KeyboardMixin {
         print("KeyboardMixin viewWillAppear")
         registerKeyboard()
     }
-    fileprivate func viewDidDisappear(_ animated: Bool) {
+    fileprivate func viewWillDisappear(_ animated: Bool) {
         deregisterKeyboard()
     }
 }
@@ -51,7 +50,7 @@ private class ViewControllerLifeCycle<T: KeyboardMixin>: MixinableViewController
     @objc func viewWillAppear(_ animated: Bool) {
         mixin.viewWillAppear(animated)
     }
-    @objc func viewDidDisappear(_ animated: Bool) {
-        mixin.viewDidDisappear(animated)
+    @objc func viewWillDisappear(_ animated: Bool) {
+        mixin.viewWillDisappear(animated)
     }
 }
