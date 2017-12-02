@@ -88,10 +88,24 @@ class ViewController: UIViewController, KeyboardMixin {
     var keyboardHeight: CGFloat? {
         didSet { }
     }
+    override func viewWillAppear(_ animated: Bool) {
+        // Don't worry, you can still do things here...
+    }
 }
 ```
 It can't be simpler!
 
+## How it works
+
+This package uses iOS runtime to swizzle methods, so all override methods and mixins' methods will be called simultaneously.
+
+## Support
+
+This package support mixin to
+* [UIViewControllerLifeCycle](https://github.com/oney/Mixin/blob/master/Mixin/Classes/Mixinables/ViewControllerMixinable.swift#L11)
+* [ExtendTableViewDelegate](https://github.com/oney/Mixin/blob/master/Mixin/Classes/Mixinables/TableViewMixinable.swift#L11)
+* UIScrollViewDelegate
+* UITextFieldDelegate
 
 ## Example
 
