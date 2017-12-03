@@ -12,8 +12,8 @@ import Mixin
 extension ViewControllerMixinable {
     var viewControllerLifeCycles: [LifeCycle?] {
         return [
-            (self as? StandardTableMixin)?.viewControllerLifeCycle,
-            (self as? KeyboardMixin)?.viewControllerLifeCycle,
+            (self as? StandardTableMixin)?.viewControllerLifeCycle_StandardTableMixin,
+            (self as? KeyboardMixin)?.viewControllerLifeCycle_KeyboardMixin,
         ]
     }
 }
@@ -21,8 +21,8 @@ extension ViewControllerMixinable {
 extension ScrollViewMixinable {
     var scrollViewDelegates: [UIScrollViewDelegate?] {
         return [
-            (self as? ScrollCloseBottomMixin)?.scrollViewDelegate,
-            (self as? ScrollFinishMixin)?.scrollViewDelegate2,
+            (self as? ScrollCloseBottomMixin)?.scrollViewDelegate_ScrollCloseBottomMixin,
+            (self as? ScrollFinishMixin)?.scrollViewDelegate_ScrollFinishMixin,
         ]
     }
 }

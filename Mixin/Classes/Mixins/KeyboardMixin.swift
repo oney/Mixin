@@ -10,7 +10,7 @@ import UIKit
 
 public protocol KeyboardMixin: ViewControllerMixinable {
     var keyboardHeight: CGFloat? { set get }
-    var viewControllerLifeCycle: UIViewControllerLifeCycle? { get }
+    var viewControllerLifeCycle_KeyboardMixin: UIViewControllerLifeCycle { get }
 }
 
 public extension KeyboardMixin {
@@ -35,7 +35,7 @@ public extension KeyboardMixin {
     private func viewWillDisappear(_ animated: Bool) {
         deregisterKeyboard()
     }
-    public var viewControllerLifeCycle: UIViewControllerLifeCycle? {
+    public var viewControllerLifeCycle_KeyboardMixin: UIViewControllerLifeCycle {
         return BlockViewControllerLifeCycle(
             viewWillAppear: viewWillAppear,
             viewWillDisappear: viewWillDisappear

@@ -11,7 +11,7 @@ import UIKit
 public protocol ScrollCloseBottomMixin: ScrollViewMixinable {
     var scrollCloseBottomThreshold: CGFloat { get }
     func closeBottom()
-    var scrollViewDelegate: UIScrollViewDelegate? { get }
+    var scrollViewDelegate_ScrollCloseBottomMixin: UIScrollViewDelegate { get }
 }
 
 public extension ScrollCloseBottomMixin {
@@ -20,7 +20,7 @@ public extension ScrollCloseBottomMixin {
             closeBottom()
         }
     }
-    public var scrollViewDelegate: UIScrollViewDelegate? {
+    public var scrollViewDelegate_ScrollCloseBottomMixin: UIScrollViewDelegate {
         return BlockUIScrollViewDelegate(scrollViewDidScroll: scrollViewDidScroll)
     }
 }
