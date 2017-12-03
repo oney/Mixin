@@ -8,7 +8,7 @@
 
 Swift is Protocol-Oriented Programming, and it's more powerful by default implementations of extensions of protocols. You can mixin methods to classes like Ruby's Mixin.
 
-However, iOS as an UI framework, objects like UIViewController have their own life cyle, if you can't listen life cyle methods, extensions as mixin don't really help.
+However, iOS as a UI framework, objects like UIViewController have their own life cyle, if you can't listen life cyle methods, extensions as mixin don't really help.
 
 For example, I write a protocol with extension to listen keyboard events
 ```swift
@@ -51,7 +51,7 @@ class ViewController: UIViewController, KeyboardMixin {
 ```
 The problem is why can't I mixin something to existing methods e.g. UIViewController life cyle?
 
-If you have programmed React.js, you'll find its Mixin mechanism is very useful. So I just copy it to iOS. After using this package, you can write a mixin like this.
+If you have programmed React.js, you'll find its Mixin mechanism is very useful. So I just copy the idea to iOS. After using this package, you can write a mixin like this.
 
 ```swift
 public protocol KeyboardMixin: ViewControllerMixinable {

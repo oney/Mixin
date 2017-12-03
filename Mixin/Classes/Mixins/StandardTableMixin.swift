@@ -14,8 +14,6 @@ public protocol StandardTableMixin: ScrollCloseBottomMixin, ViewControllerMixina
     func refresh()
     func loadMore()
     func showPagingSpinner() -> Bool
-    var viewControllerLifeCycle_StandardTableMixin: UIViewControllerLifeCycle { get }
-    var tableViewDelegate: ExtendTableViewDelegate? { get }
 }
 
 public extension StandardTableMixin {

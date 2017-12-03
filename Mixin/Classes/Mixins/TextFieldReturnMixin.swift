@@ -11,7 +11,6 @@ import UIKit
 public protocol TextFieldReturnMixin: TextFieldDelegateMixinable {
     var endEditingViews: [UIView]? { get }
     func TextFieldReturnMixin_textFieldShouldReturn(_ textField: UITextField) -> Bool
-    var textFieldDelegate: UITextFieldDelegate? { get }
 }
 
 public extension TextFieldReturnMixin {

@@ -10,7 +10,6 @@ import UIKit
 
 public protocol ScrollFinishMixin: ScrollViewMixinable {
     func scrollFinish(_ scrollView: UIScrollView)
-    var scrollViewDelegate_ScrollFinishMixin: UIScrollViewDelegate { get }
 }
 
 public extension ScrollFinishMixin {

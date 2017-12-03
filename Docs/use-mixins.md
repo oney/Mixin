@@ -39,7 +39,7 @@ import Mixin
 extension ScrollViewMixinable {
     var scrollViewDelegates: [UIScrollViewDelegate?] {
         return [
-            (self as? ScrollFinishMixin)?.scrollViewDelegate,
+            (self as? ScrollFinishMixin)?.scrollViewDelegate_ScrollFinishMixin,
         ]
     }
 }

@@ -10,7 +10,6 @@ import UIKit
 
 public protocol KeyboardMixin: ViewControllerMixinable {
     var keyboardHeight: CGFloat? { set get }
-    var viewControllerLifeCycle_KeyboardMixin: UIViewControllerLifeCycle { get }
 }
 
 public extension KeyboardMixin {
