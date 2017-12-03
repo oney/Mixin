@@ -15,26 +15,12 @@ public protocol ScrollCloseBottomMixin: ScrollViewMixinable {
 }
 
 public extension ScrollCloseBottomMixin {
-    fileprivate func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        print("ScrollCloseBottomMixin scrollViewDidScroll")
+    private func scrollViewDidScroll(_ scrollView: UIScrollView) {
         if scrollView.scrollOver(offset: scrollCloseBottomThreshold) {
             closeBottom()
         }
     }
-}
-
-
-/////////////////////////// Binding \\\\\\\\\\\\\\\\\\\\\\\\\\\
-
-public extension ScrollCloseBottomMixin {
     public var scrollViewDelegate: UIScrollViewDelegate? {
-        return ScrollViewDelegate(mixin: self)
-    }
-}
-
-private var scrollViewDelegateKey: Void?
-private class ScrollViewDelegate<T: ScrollCloseBottomMixin>: MixinableScrollViewDelegate<T> {
-    @objc func scrollViewDidScroll(_ scrollView: UIScrollView) {
-        mixin.scrollViewDidScroll(scrollView)
+        return BlockUIScrollViewDelegate(scrollViewDidScroll: scrollViewDidScroll)
     }
 }

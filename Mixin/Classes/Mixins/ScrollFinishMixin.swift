@@ -14,40 +14,24 @@ public protocol ScrollFinishMixin: ScrollViewMixinable {
 }
 
 public extension ScrollFinishMixin {
-    fileprivate func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
+    private func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
         if !decelerate {
             scrollFinish(scrollView)
         }
     }
-    fileprivate func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+    private func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         scrollFinish(scrollView)
     }
-    fileprivate func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
+    private func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
         DispatchQueue.main.asyncAfter(deadline: .now() + 0.05) {
             self.scrollFinish(scrollView)
         }
     }
-}
-
-
-/////////////////////////// Binding \\\\\\\\\\\\\\\\\\\\\\\\\\\
-
-public extension ScrollFinishMixin {
     public var scrollViewDelegate2: UIScrollViewDelegate? {
-        return ScrollViewDelegate(mixin: self)
+        return BlockUIScrollViewDelegate(
+            scrollViewDidEndDragging: scrollViewDidEndDragging,
+            scrollViewDidEndDecelerating: scrollViewDidEndDecelerating,
+            scrollViewDidEndScrollingAnimation: scrollViewDidEndScrollingAnimation
+        )
     }
 }
-
-private var scrollViewDelegateKey: Void?
-private class ScrollViewDelegate<T: ScrollFinishMixin>: MixinableScrollViewDelegate<T> {
-    @objc func scrollViewDidEndDragging(_ scrollView: UIScrollView, willDecelerate decelerate: Bool) {
-        mixin.scrollViewDidEndDragging(scrollView, willDecelerate: decelerate)
-    }
-    @objc func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
-        mixin.scrollViewDidEndDecelerating(scrollView)
-    }
-    @objc func scrollViewDidEndScrollingAnimation(_ scrollView: UIScrollView) {
-        mixin.scrollViewDidEndScrollingAnimation(scrollView)
-    }
-}
-

@@ -28,29 +28,17 @@ public extension KeyboardMixin {
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillHide, object: nil)
         NotificationCenter.default.removeObserver(self, name: NSNotification.Name.UIKeyboardWillChangeFrame, object: nil)
     }
-    fileprivate func viewWillAppear(_ animated: Bool) {
+    private func viewWillAppear(_ animated: Bool) {
         print("KeyboardMixin viewWillAppear")
         registerKeyboard()
     }
-    fileprivate func viewWillDisappear(_ animated: Bool) {
+    private func viewWillDisappear(_ animated: Bool) {
         deregisterKeyboard()
     }
-}
-
-
-/////////////////////////// Binding \\\\\\\\\\\\\\\\\\\\\\\\\\\
-
-public extension KeyboardMixin {
     public var viewControllerLifeCycle: UIViewControllerLifeCycle? {
-        return ViewControllerLifeCycle(mixin: self)
-    }
-}
-
-private class ViewControllerLifeCycle<T: KeyboardMixin>: MixinableViewControllerLifeCycle<T> {
-    @objc func viewWillAppear(_ animated: Bool) {
-        mixin.viewWillAppear(animated)
-    }
-    @objc func viewWillDisappear(_ animated: Bool) {
-        mixin.viewWillDisappear(animated)
+        return BlockViewControllerLifeCycle(
+            viewWillAppear: viewWillAppear,
+            viewWillDisappear: viewWillDisappear
+        )
     }
 }

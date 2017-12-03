@@ -64,25 +64,10 @@ public extension StandardTableMixin {
             }
         }()
     }
-    fileprivate func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        return true
-    }
-    fileprivate func textFieldShouldChangeCharactersIn(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
-        return true
-    }
 }
 
 
 /////////////////////////// Binding \\\\\\\\\\\\\\\\\\\\\\\\\\\
-
-private class ViewControllerLifeCycle<T: StandardTableMixin>: MixinableViewControllerLifeCycle<T> {
-    @objc func viewWillAppear(_ animated: Bool) {
-        mixin.viewWillAppear(animated)
-    }
-    @objc func viewDidLoad() {
-        mixin.viewDidLoad()
-    }
-}
 
 class TableViewDelegate: NSObject, ExtendTableViewDelegate {
     unowned let mixin: StandardTableMixin
@@ -100,7 +85,10 @@ class TableViewDelegate: NSObject, ExtendTableViewDelegate {
 
 public extension StandardTableMixin {
     public var viewControllerLifeCycle: UIViewControllerLifeCycle {
-        return ViewControllerLifeCycle(mixin: self)
+        return BlockViewControllerLifeCycle(
+            viewDidLoad: viewDidLoad,
+            viewWillAppear: viewWillAppear
+        )
     }
     public var tableViewDelegate: ExtendTableViewDelegate? {
         return TableViewDelegate(mixin: self)
