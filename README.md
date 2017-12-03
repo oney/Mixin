@@ -111,6 +111,9 @@ This package support mixin to
 
 Check out [Example ViewController](https://github.com/oney/Mixin/blob/master/Example/Mixin/ViewController.swift), it shows how amazing to use Mixin
 
+* [How to use mixins](https://github.com/oney/Mixin/tree/master/Docs/use-mixins.md)
+* [How to make mixins](https://github.com/oney/Mixin/tree/master/Docs/make-mixins.md)
+
 ## Requirements
 
 Only tested in Swift 4
